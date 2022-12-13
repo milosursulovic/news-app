@@ -11,7 +11,7 @@
     <fragment
         android:id="@+id/breakingNewsFragment"
         android:name="com.example.newsapp.ui.fragments.BreakingNewsFragment"
-        android:label="BreakingNewsFragment" >
+        android:label="BreakingNewsFragment">
         <action
             android:id="@+id/action_breakingNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment" />
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/savedNewsFragments"
         android:name="com.example.newsapp.ui.fragments.SavedNewsFragments"
-        android:label="SavedNewsFragments" >
+        android:label="SavedNewsFragments">
         <action
             android:id="@+id/action_savedNewsFragments_to_articleFragment"
             app:destination="@id/articleFragment" />
@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/searchNewsFragment"
         android:name="com.example.newsapp.ui.fragments.SearchNewsFragment"
-        android:label="SearchNewsFragment" >
+        android:label="SearchNewsFragment">
         <action
             android:id="@+id/action_searchNewsFragment_to_articleFragment"
             app:destination="@id/articleFragment" />
