@@ -11,7 +11,7 @@ import com.example.newsapp.presentation.viewmodels.NewsViewModel
 
 class SavedNewsFragments : Fragment() {
     private lateinit var binding: FragmentSavedNewsBinding
-    lateinit var newsViewModel: NewsViewModel
+    private lateinit var newsViewModel: NewsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,

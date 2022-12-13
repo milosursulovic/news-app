@@ -5,14 +5,14 @@ import com.example.newsapp.domain.usecases.GetBreakingNewsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
-import dagger.hilt.android.scopes.ViewModelScoped
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
-@InstallIn(ViewModelComponent::class)
+@InstallIn(SingletonComponent::class)
 object UseCasesModule {
     @Provides
-    @ViewModelScoped
+    @Singleton
     fun providesGetBreakingNewsUseCase(repository: NewsRepository): GetBreakingNewsUseCase =
         GetBreakingNewsUseCase(repository)
 }
