@@ -5,6 +5,7 @@ buildscript {
         hilt_version = "2.44.2"
         okhttp_version = "4.10.0"
         room_version = "2.4.3"
+        glide_version = "4.14.2"
     }
 }
 
