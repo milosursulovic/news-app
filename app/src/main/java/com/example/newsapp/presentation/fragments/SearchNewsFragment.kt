@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.newsapp.R
 import com.example.newsapp.data.api.Resource
-import com.example.newsapp.databinding.FragmentSavedNewsBinding
+import com.example.newsapp.databinding.FragmentSearchNewsBinding
 import com.example.newsapp.presentation.NewsActivity
 import com.example.newsapp.presentation.adapters.NewsAdapter
 import com.example.newsapp.presentation.viewmodels.NewsViewModel
@@ -27,7 +29,7 @@ class SearchNewsFragment : Fragment() {
         private const val SEARCH_NEWS_TIME_DELAY = 500L
     }
 
-    private lateinit var binding: FragmentSavedNewsBinding
+    private lateinit var binding: FragmentSearchNewsBinding
     private lateinit var newsViewModel: NewsViewModel
 
     @Inject
@@ -38,7 +40,7 @@ class SearchNewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentSavedNewsBinding.inflate(inflater)
+        binding = FragmentSearchNewsBinding.inflate(inflater)
         return binding.root
     }
 
@@ -47,6 +49,13 @@ class SearchNewsFragment : Fragment() {
         newsViewModel = (activity as NewsActivity).newsViewModel
 
         setupRecyclerView()
+
+        newsAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(R.id.action_searchNewsFragment_to_articleFragment, bundle)
+        }
 
         var job: Job? = null
 

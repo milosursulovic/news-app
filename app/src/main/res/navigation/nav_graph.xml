@@ -7,7 +7,11 @@
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.example.newsapp.presentation.fragments.ArticleFragment"
-        android:label="ArticleFragment" />
+        android:label="ArticleFragment">
+        <argument
+            android:name="article"
+            app:argType="com.example.newsapp.data.api.models.Article" />
+    </fragment>
     <fragment
         android:id="@+id/breakingNewsFragment"
         android:name="com.example.newsapp.presentation.fragments.BreakingNewsFragment"
@@ -18,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragments"
-        android:name="com.example.newsapp.presentation.fragments.SavedNewsFragments"
+        android:name="com.example.newsapp.presentation.fragments.SavedNewsFragment"
         android:label="SavedNewsFragments">
         <action
             android:id="@+id/action_savedNewsFragments_to_articleFragment"
