@@ -7,8 +7,8 @@ import com.example.newsapp.domain.repository.NewsRepository
 import retrofit2.Response
 
 class NewsRepositoryImpl(
-    val api: NewsApi,
-    val db: ArticlesDatabase
+    private val api: NewsApi,
+    private val db: ArticlesDatabase
 ) : NewsRepository {
     override suspend fun getBreakingNews(): Response<NewsResponse> = api.getBreakingNews()
 
