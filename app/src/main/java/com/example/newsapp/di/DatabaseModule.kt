@@ -2,7 +2,6 @@ package com.example.newsapp.di
 
 import android.app.Application
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.newsapp.data.db.ArticlesDao
 import com.example.newsapp.data.db.ArticlesDatabase
 import dagger.Module

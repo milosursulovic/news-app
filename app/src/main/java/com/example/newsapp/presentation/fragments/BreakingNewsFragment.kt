@@ -1,4 +1,4 @@
-package com.example.newsapp.ui.fragments
+package com.example.newsapp.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.newsapp.databinding.FragmentBreakingNewsBinding
+import com.example.newsapp.presentation.NewsActivity
+import com.example.newsapp.presentation.viewmodels.NewsViewModel
 
 class BreakingNewsFragment : Fragment() {
     private lateinit var binding: FragmentBreakingNewsBinding
+    lateinit var newsViewModel: NewsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -17,5 +20,10 @@ class BreakingNewsFragment : Fragment() {
     ): View {
         binding = FragmentBreakingNewsBinding.inflate(inflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        newsViewModel = (activity as NewsActivity).newsViewModel
     }
 }
