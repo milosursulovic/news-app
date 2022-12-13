@@ -1,4 +1,4 @@
-package com.example.newsapp.data.api.response
+package com.example.newsapp.data.api.models
 
 
 import androidx.room.Entity

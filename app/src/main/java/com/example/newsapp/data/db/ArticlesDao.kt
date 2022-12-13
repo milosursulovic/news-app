@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.newsapp.data.api.response.Article
+import com.example.newsapp.data.api.models.Article
 import kotlinx.coroutines.flow.Flow
 
 @Dao
