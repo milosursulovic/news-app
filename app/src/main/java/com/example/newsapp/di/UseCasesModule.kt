@@ -1,8 +1,7 @@
 package com.example.newsapp.di
 
 import com.example.newsapp.domain.repository.NewsRepository
-import com.example.newsapp.domain.usecases.GetBreakingNewsUseCase
-import com.example.newsapp.domain.usecases.SearchNewsUseCase
+import com.example.newsapp.domain.usecases.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -21,4 +20,19 @@ object UseCasesModule {
     @Singleton
     fun providesSearchNewsUseCase(repository: NewsRepository): SearchNewsUseCase =
         SearchNewsUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun providesInsertArticleUseCase(repository: NewsRepository): InsertArticleUseCase =
+        InsertArticleUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun providesDeleteArticleUseCase(repository: NewsRepository): DeleteArticleUseCase =
+        DeleteArticleUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun providesGetAllArticlesUseCase(repository: NewsRepository): GetAllArticlesUseCase =
+        GetAllArticlesUseCase(repository)
 }
