@@ -1,6 +1,7 @@
 package com.example.newsapp.di
 
 import com.example.newsapp.BuildConfig
+import com.example.newsapp.common.Constants
 import com.example.newsapp.data.api.NewsApi
 import dagger.Module
 import dagger.Provides
@@ -32,7 +33,7 @@ object NetworkModule {
     @Singleton
     fun providesRetrofit(client: OkHttpClient): NewsApi =
         Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(Constants.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
